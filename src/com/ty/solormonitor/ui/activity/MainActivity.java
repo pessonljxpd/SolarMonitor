@@ -5,7 +5,6 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
-import android.view.Window;
 import android.widget.TextView;
 
 import com.ty.solarmonitor.R;
@@ -19,7 +18,8 @@ public class MainActivity extends BaseActivity {
 
 	@AfterInject
 	void init(){
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
+		
 	}
 	
 	@AfterViews
