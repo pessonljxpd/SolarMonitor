@@ -8,20 +8,14 @@ package com.shelly.solormonitor.ui.activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.Button;
-import android.widget.TextView;
-import com.ty.solarmonitor.R.id;
-import com.ty.solarmonitor.R.layout;
 import org.androidannotations.api.builder.ActivityIntentBuilder;
 import org.androidannotations.api.view.HasViews;
-import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
 
-public final class MainActivity_
-    extends MainActivity
-    implements HasViews, OnViewChangedListener
+public final class CollectorConnectSetting_
+    extends CollectorConnectSetting
+    implements HasViews
 {
 
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
@@ -32,12 +26,9 @@ public final class MainActivity_
         init_(savedInstanceState);
         super.onCreate(savedInstanceState);
         OnViewChangedNotifier.replaceNotifier(previousNotifier);
-        setContentView(layout.activity_main);
     }
 
     private void init_(Bundle savedInstanceState) {
-        OnViewChangedNotifier.registerOnViewChangedListener(this);
-        init();
     }
 
     @Override
@@ -58,55 +49,36 @@ public final class MainActivity_
         onViewChangedNotifier_.notifyViewChanged(this);
     }
 
-    public static MainActivity_.IntentBuilder_ intent(Context context) {
-        return new MainActivity_.IntentBuilder_(context);
+    public static CollectorConnectSetting_.IntentBuilder_ intent(Context context) {
+        return new CollectorConnectSetting_.IntentBuilder_(context);
     }
 
-    public static MainActivity_.IntentBuilder_ intent(android.app.Fragment fragment) {
-        return new MainActivity_.IntentBuilder_(fragment);
+    public static CollectorConnectSetting_.IntentBuilder_ intent(android.app.Fragment fragment) {
+        return new CollectorConnectSetting_.IntentBuilder_(fragment);
     }
 
-    public static MainActivity_.IntentBuilder_ intent(android.support.v4.app.Fragment supportFragment) {
-        return new MainActivity_.IntentBuilder_(supportFragment);
-    }
-
-    @Override
-    public void onViewChanged(HasViews hasViews) {
-        mTv = ((TextView) hasViews.findViewById(id.mTv));
-        mBtnJumpSetting = ((Button) hasViews.findViewById(id.mBtn));
-        if (mBtnJumpSetting!= null) {
-            mBtnJumpSetting.setOnClickListener(new OnClickListener() {
-
-
-                @Override
-                public void onClick(View view) {
-                    MainActivity_.this.startSettingActivity();
-                }
-
-            }
-            );
-        }
-        initView();
+    public static CollectorConnectSetting_.IntentBuilder_ intent(android.support.v4.app.Fragment supportFragment) {
+        return new CollectorConnectSetting_.IntentBuilder_(supportFragment);
     }
 
     public static class IntentBuilder_
-        extends ActivityIntentBuilder<MainActivity_.IntentBuilder_>
+        extends ActivityIntentBuilder<CollectorConnectSetting_.IntentBuilder_>
     {
 
         private android.app.Fragment fragment_;
         private android.support.v4.app.Fragment fragmentSupport_;
 
         public IntentBuilder_(Context context) {
-            super(context, MainActivity_.class);
+            super(context, CollectorConnectSetting_.class);
         }
 
         public IntentBuilder_(android.app.Fragment fragment) {
-            super(fragment.getActivity(), MainActivity_.class);
+            super(fragment.getActivity(), CollectorConnectSetting_.class);
             fragment_ = fragment;
         }
 
         public IntentBuilder_(android.support.v4.app.Fragment fragment) {
-            super(fragment.getActivity(), MainActivity_.class);
+            super(fragment.getActivity(), CollectorConnectSetting_.class);
             fragmentSupport_ = fragment;
         }
 

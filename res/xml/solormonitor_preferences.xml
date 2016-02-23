@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Application Info" >
+        <com.bencatlin.modbusdroid.OldVersion.CustomDialogPreference
+            android:dialogIcon="@drawable/ic_launcher"
+            android:dialogMessage="I need a sweet string here"
+            android:negativeButtonText="Done"
+            android:positiveButtonText=""
+            android:title="About ModbusDroid" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

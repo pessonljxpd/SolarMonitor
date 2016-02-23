@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Connection Settings" >
+        <EditTextPreference
+            android:defaultValue="10.0.2.2"
+            android:dialogMessage="IP Address:"
+            android:dialogTitle="Set IP Address"
+            android:inputType="number|numberDecimal|text|textNoSuggestions"
+            android:key="IpAddress"
+            android:singleLine="true"
+            android:summary="Set Destination IP Address"
+            android:title="IP Address" />
+        <EditTextPreference
+            android:defaultValue="502"
+            android:dialogMessage="Port:"
+            android:dialogTitle="Set Destination Port"
+            android:inputType="number"
+            android:key="PortSetting"
+            android:numeric="integer"
+            android:singleLine="true"
+            android:summary="Set Destination Port"
+            android:title="Port" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Modbus Settings" >
+        <EditTextPreference
+            android:defaultValue="1000"
+            android:dialogMessage="Poll Time:"
+            android:dialogTitle="Set Poll Time in ms (0 = Poll Once)"
+            android:inputType="number"
+            android:key="PollTime"
+            android:numeric="integer"
+            android:singleLine="true"
+            android:summary="Set Poll Time (ms)"
+            android:title="Poll Time" />
+        <EditTextPreference
+            android:defaultValue="1"
+            android:dialogMessage="Slave Address"
+            android:dialogTitle="Set Alternative Slave Address"
+            android:key="SlaveAddress"
+            android:numeric="integer"
+            android:singleLine="true"
+            android:summary="*Experimental* - Alternative Slave Address"
+            android:title="Slave Address" />
+    </PreferenceCategory>
+   
+
+</PreferenceScreen>
