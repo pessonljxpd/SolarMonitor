@@ -7,6 +7,7 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="lib" path="libs/androidannotations-api-3.2.jar"/>
 	<classpathentry kind="lib" path="libs/disklrucache-2.0.2.jar"/>
+	<classpathentry kind="lib" path="libs/org.ocpsoft.prettytime.jar"/>
 	<classpathentry kind="src" path=".apt_generated">
 		<attributes>
 			<attribute name="optional" value="true"/>

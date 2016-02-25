@@ -72,8 +72,8 @@ public final class MainActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        mTv = ((TextView) hasViews.findViewById(id.mTv));
         mBtnJumpSetting = ((Button) hasViews.findViewById(id.mBtn));
+        mTv = ((TextView) hasViews.findViewById(id.mTv));
         if (mBtnJumpSetting!= null) {
             mBtnJumpSetting.setOnClickListener(new OnClickListener() {
 
