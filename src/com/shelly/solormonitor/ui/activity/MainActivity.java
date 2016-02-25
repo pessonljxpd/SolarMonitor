@@ -9,6 +9,7 @@ import org.androidannotations.annotations.ViewById;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.shelly.solormonitor.util.LogUtils;
 import com.ty.solarmonitor.R;
 
 
