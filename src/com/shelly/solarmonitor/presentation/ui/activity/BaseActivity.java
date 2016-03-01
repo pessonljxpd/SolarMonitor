@@ -1,4 +1,4 @@
-package com.shelly.solormonitor.ui.activity;
+package com.shelly.solarmonitor.presentation.ui.activity;
 
 import android.app.Activity;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.shelly.solormonitor.util;
+package com.shelly.solarmonitor.utils;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

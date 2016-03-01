@@ -1,6 +1,6 @@
-package com.shelly.solormonitor.http;
+package com.shelly.solarmonitor.network.http;
 
-import com.shelly.solormonitor.util.LogUtils;
+import com.shelly.solarmonitor.utils.LogUtils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

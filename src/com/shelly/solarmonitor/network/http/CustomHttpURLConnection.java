@@ -1,4 +1,4 @@
-package com.shelly.solormonitor.http;
+package com.shelly.solarmonitor.network.http;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -25,7 +25,7 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.protocol.HTTP;
 
-import com.shelly.solormonitor.util.LogUtils;
+import com.shelly.solarmonitor.utils.LogUtils;
 
 import android.content.Context;
 

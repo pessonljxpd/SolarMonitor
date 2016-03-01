@@ -1,4 +1,4 @@
-package com.shelly.solormonitor.http;
+package com.shelly.solarmonitor.network.http;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.shelly.solormonitor.util.LogUtils;
+import com.shelly.solarmonitor.utils.LogUtils;
 
 public class APNManager {
 	// 手机上网分为wap和net两种方式，使用net手机就会直接连入互联网，而使用wap则会中间多了一个代理网关，移动联通均是10.0.0.172，端口80。而写与联网有关的代码，wap和net是不一样的：

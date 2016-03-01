@@ -1,11 +1,8 @@
-package com.shelly.solormonitor;
-
-import org.androidannotations.annotations.EApplication;
+package com.shelly.solarmonitor;
 
 import android.app.Application;
 import android.content.res.Configuration;
 
-@EApplication
 public class SolarMonitorApp extends Application {
 
 	private SolarMonitorApp mApplication;

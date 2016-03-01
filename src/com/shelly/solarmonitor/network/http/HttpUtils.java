@@ -1,4 +1,4 @@
-package com.shelly.solormonitor.http;
+package com.shelly.solarmonitor.network.http;
 
 import org.apache.http.NameValuePair;
 

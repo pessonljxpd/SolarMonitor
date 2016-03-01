@@ -1,6 +1,4 @@
-package com.shelly.solormonitor.ui.activity;
-
-import org.androidannotations.annotations.EActivity;
+package com.shelly.solarmonitor.presentation.ui.activity;
 
 import com.ty.solarmonitor.R;
 
@@ -10,7 +8,6 @@ import android.os.Bundle;
 import android.preference.EditTextPreference;
 import android.preference.PreferenceActivity;
 
-@EActivity
 public class CollectorConnectSetting extends PreferenceActivity implements OnSharedPreferenceChangeListener {
 
 	public static final String IP_ADDRESS_PREFERENCE = "IpAddress";
