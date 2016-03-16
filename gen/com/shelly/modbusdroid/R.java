@@ -8,13 +8,13 @@ package com.shelly.modbusdroid;
 
 public final class R {
 	public static final class drawable {
-		public static final int ic_launcher = 0x7f020047;
+		public static final int ic_launcher = 0x7f020053;
 	}
 	public static final class string {
-		public static final int app_name = 0x7f0c0016;
+		public static final int app_name = 0x7f0c001c;
 	}
 	public static final class style {
-		public static final int AppBaseTheme = 0x7f080147;
-		public static final int AppTheme = 0x7f080148;
+		public static final int AppBaseTheme = 0x7f09014e;
+		public static final int AppTheme = 0x7f090147;
 	}
 }

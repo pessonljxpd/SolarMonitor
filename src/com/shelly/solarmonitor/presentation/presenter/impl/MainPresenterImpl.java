@@ -2,39 +2,36 @@ package com.shelly.solarmonitor.presentation.presenter.impl;
 
 import com.shelly.solarmonitor.domin.executor.Executor;
 import com.shelly.solarmonitor.domin.executor.MainThread;
-import com.shelly.solarmonitor.domin.interactors.WelcomingInteractor;
-import com.shelly.solarmonitor.domin.interactors.impl.WelcomingInteractorImpl;
-import com.shelly.solarmonitor.domin.repository.MessageRepository;
+import com.shelly.solarmonitor.domin.interactors.WtgInfoInteractor;
+import com.shelly.solarmonitor.domin.interactors.impl.WtgInfoInteractorImpl;
+import com.shelly.solarmonitor.domin.repository.WtgInfoRepository;
 import com.shelly.solarmonitor.presentation.presenter.MainPresenter;
 import com.shelly.solarmonitor.presentation.presenter.base.AbstractPresenter;
 
-/**
- * Created by dmilicic on 12/13/15.
- */
 public class MainPresenterImpl extends AbstractPresenter implements MainPresenter,
-        WelcomingInteractor.Callback {
+        WtgInfoInteractor.Callback {
 
     private MainPresenter.View mView;
-    private MessageRepository  mMessageRepository;
+    private WtgInfoRepository  mWtgInfoRepository;
 
     public MainPresenterImpl(Executor executor, MainThread mainThread,
-                             View view, MessageRepository messageRepository) {
+                             View view, WtgInfoRepository wtgInfoRepository) {
         super(executor, mainThread);
         mView = view;
-        mMessageRepository = messageRepository;
+        mWtgInfoRepository = wtgInfoRepository;
     }
 
     @Override
     public void resume() {
 
-        mView.showProgress();
+        mView.showLoading("");
 
         // initialize the interactor
-        WelcomingInteractor interactor = new WelcomingInteractorImpl(
+        WtgInfoInteractor interactor = new WtgInfoInteractorImpl(
                 mExecutor,
                 mMainThread,
                 this,
-                mMessageRepository
+                mWtgInfoRepository
         );
 
         // run the interactor
@@ -63,13 +60,14 @@ public class MainPresenterImpl extends AbstractPresenter implements MainPresente
 
     @Override
     public void onMessageRetrieved(String message) {
-        mView.hideProgress();
-        mView.displayWelcomeMessage(message);
+    	mView.hideLoading();
+    	System.out.println(mView+message);
+        mView.displayWtgInfo(message);
     }
 
     @Override
     public void onRetrievalFailed(String error) {
-        mView.hideProgress();
+        mView.hideLoading();
         onError(error);
     }
 }

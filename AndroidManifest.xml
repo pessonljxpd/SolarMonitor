@@ -8,19 +8,24 @@
         android:targetSdkVersion="23" />
 
     <application
-        android:name="com.shelly.solarmonitor.SolarMonitorApp"
+        android:name="com.shelly.solarmonitor.SolarMonitorApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity android:name = "com.shelly.solarmonitor.presentation.ui.activity.MainActivity" >
+        <activity android:name="com.shelly.solarmonitor.presentation.ui.activity.WindFarmActivity" >
+        </activity>
+        <activity android:name="com.shelly.solarmonitor.presentation.ui.activity.SetCollectorConnectActivity" >
+        </activity>
+        <activity android:name="com.shelly.solarmonitor.presentation.ui.activity.MainActivitiy"
+            android:theme="@style/AppTheme.NoneTranslucent" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name = "com.shelly.solarmonitor.presentation.ui.activity.CollectorConnectSetting" >
+        <activity android:name="com.shelly.solarmonitor.presentation.ui.activity.AboutActivity" >
         </activity>
     </application>
 
