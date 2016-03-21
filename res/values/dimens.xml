@@ -12,6 +12,8 @@
     <dimen name="textview_padding">16dp</dimen>
     <dimen name="about_card_margin">-6dp</dimen>
     <dimen name="about_card_margin_top_bottom">-8dp</dimen>
+    <dimen name="home_menu_width">220dp</dimen>
+    <dimen name="home_menu_top_image_height">120dp</dimen>
     <!-- smartBar -->
     <dimen name="fragment_common_list_smart_tab_padding">20dp</dimen>
     <dimen name="fragment_common_list_smart_tab_indicator_height">3dp</dimen>

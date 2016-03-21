@@ -9,21 +9,18 @@ public class AboutActivity$$ViewInjector {
     View view;
     view = finder.findRequiredView(source, 2131165365, "field 'mFabFeedback'");
     target.mFabFeedback = (android.support.design.widget.FloatingActionButton) view;
-    view = finder.findRequiredView(source, 2131165362, "field 'mCollapsingToolbarLayout'");
-    target.mCollapsingToolbarLayout = (android.support.design.widget.CollapsingToolbarLayout) view;
     view = finder.findRequiredView(source, 2131165359, "field 'mCL'");
     target.mCL = (android.support.design.widget.CoordinatorLayout) view;
+    view = finder.findRequiredView(source, 2131165362, "field 'mCollapsingToolbarLayout'");
+    target.mCollapsingToolbarLayout = (android.support.design.widget.CollapsingToolbarLayout) view;
     view = finder.findRequiredView(source, 2131165360, "field 'mRecyclerView'");
     target.mRecyclerView = (android.support.v7.widget.RecyclerView) view;
-    view = finder.findRequiredView(source, 2131165364, "field 'mToolbar'");
-    target.mToolbar = (android.support.v7.widget.Toolbar) view;
   }
 
   public static void reset(com.shelly.solarmonitor.presentation.ui.activity.AboutActivity target) {
     target.mFabFeedback = null;
-    target.mCollapsingToolbarLayout = null;
     target.mCL = null;
+    target.mCollapsingToolbarLayout = null;
     target.mRecyclerView = null;
-    target.mToolbar = null;
   }
 }

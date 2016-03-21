@@ -2,42 +2,43 @@ package com.shelly.solarmonitor.presentation.presenter.impl;
 
 import com.shelly.solarmonitor.domin.executor.Executor;
 import com.shelly.solarmonitor.domin.executor.MainThread;
-import com.shelly.solarmonitor.domin.interactors.WtgInfoInteractor;
-import com.shelly.solarmonitor.domin.interactors.impl.WtgInfoInteractorImpl;
-import com.shelly.solarmonitor.domin.repository.WtgInfoRepository;
+import com.shelly.solarmonitor.domin.interactors.CollectorInteractor;
+import com.shelly.solarmonitor.domin.interactors.impl.CollectorInteractorImpl;
+import com.shelly.solarmonitor.domin.repository.CollectorRepository;
 import com.shelly.solarmonitor.presentation.presenter.MainPresenter;
 import com.shelly.solarmonitor.presentation.presenter.base.AbstractPresenter;
 
-public class MainPresenterImpl extends AbstractPresenter implements MainPresenter,
-        WtgInfoInteractor.Callback {
+public abstract class MainPresenterImpl extends AbstractPresenter implements MainPresenter,
+        CollectorInteractor.Callback {
 
     private MainPresenter.View mView;
-    private WtgInfoRepository  mWtgInfoRepository;
+    private CollectorRepository  mCollectorRepository;
+	private CollectorInteractor mInteractor;
 
     public MainPresenterImpl(Executor executor, MainThread mainThread,
-                             View view, WtgInfoRepository wtgInfoRepository) {
+                             View view, CollectorRepository wtgInfoRepository) {
         super(executor, mainThread);
-        mView = view;
-        mWtgInfoRepository = wtgInfoRepository;
+        this.mView = view;
+        this.mCollectorRepository = wtgInfoRepository;
+        // initialize the interactor
+        this.mInteractor = new CollectorInteractorImpl(
+                mExecutor,
+                mMainThread,
+                this,
+                mCollectorRepository
+        );
+
     }
 
     @Override
     public void resume() {
 
-        mView.showLoading("");
-
-        // initialize the interactor
-        WtgInfoInteractor interactor = new WtgInfoInteractorImpl(
-                mExecutor,
-                mMainThread,
-                this,
-                mWtgInfoRepository
-        );
-
+        mView.showLoading(null);
+        
         // run the interactor
-        interactor.execute();
+        mInteractor.execute();
     }
-
+    
     @Override
     public void pause() {
 
@@ -61,8 +62,7 @@ public class MainPresenterImpl extends AbstractPresenter implements MainPresente
     @Override
     public void onMessageRetrieved(String message) {
     	mView.hideLoading();
-    	System.out.println(mView+message);
-        mView.displayWtgInfo(message);
+        mView.displayCollectorInfo(message);
     }
 
     @Override

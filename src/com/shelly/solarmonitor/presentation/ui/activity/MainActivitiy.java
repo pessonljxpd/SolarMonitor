@@ -197,12 +197,12 @@ public class MainActivitiy extends BaseActivity implements OnNavigationItemSelec
 
 	@Override
 	protected boolean toggleOverridePendingTransition() {
-		return true;
+		return false;
 	}
 
 	@Override
 	protected TransitionMode getOverridePendingTransitionMode() {
-		return TransitionMode.RIGHT;
+		return null;
 	}
 
 	@Override

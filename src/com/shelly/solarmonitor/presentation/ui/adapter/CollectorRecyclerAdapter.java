@@ -75,8 +75,8 @@ public class CollectorRecyclerAdapter extends
 
 	@Override
 	public void onBindViewHolder(CollectoriewHolder holder, int position) {
-		holder.title.setText(cardItems.get(position).title);
-		holder.content.setText(cardItems.get(position).content);
+		holder.title.setText(cardItems.get(position).getTitle());
+		holder.content.setText(cardItems.get(position).getContent());
 		holder.position = position;
 	}
 

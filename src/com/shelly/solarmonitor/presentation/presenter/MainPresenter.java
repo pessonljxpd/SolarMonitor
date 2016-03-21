@@ -6,7 +6,7 @@ import com.shelly.solarmonitor.presentation.ui.BaseView;
 public interface MainPresenter extends BasePresenter {
 
 	public interface View extends BaseView {
-		void displayWtgInfo(String msg);
+		void displayCollectorInfo(String msg);
 	}
 }
  

@@ -2,22 +2,22 @@ package com.shelly.solarmonitor.domin.interactors.impl;
 
 import com.shelly.solarmonitor.domin.executor.Executor;
 import com.shelly.solarmonitor.domin.executor.MainThread;
-import com.shelly.solarmonitor.domin.interactors.WtgInfoInteractor;
+import com.shelly.solarmonitor.domin.interactors.CollectorInteractor;
 import com.shelly.solarmonitor.domin.interactors.base.AbstractInteractor;
-import com.shelly.solarmonitor.domin.repository.WtgInfoRepository;
+import com.shelly.solarmonitor.domin.repository.CollectorRepository;
 
 /**
  * This is an interactor boilerplate with a reference to a model repository.
  * <p/>
  */
-public class WtgInfoInteractorImpl extends AbstractInteractor implements WtgInfoInteractor {
+public class CollectorInteractorImpl extends AbstractInteractor implements CollectorInteractor {
 
-    private WtgInfoInteractor.Callback mCallback;
-    private WtgInfoRepository            mMessageRepository;
+    private CollectorInteractor.Callback mCallback;
+    private CollectorRepository            mMessageRepository;
 
-    public WtgInfoInteractorImpl(Executor threadExecutor,
+    public CollectorInteractorImpl(Executor threadExecutor,
                                    MainThread mainThread,
-                                   Callback callback, WtgInfoRepository messageRepository) {
+                                   Callback callback, CollectorRepository messageRepository) {
         super(threadExecutor, mainThread);
         mCallback = callback;
         mMessageRepository = messageRepository;
@@ -27,7 +27,7 @@ public class WtgInfoInteractorImpl extends AbstractInteractor implements WtgInfo
         mMainThread.post(new Runnable() {
             @Override
             public void run() {
-                mCallback.onRetrievalFailed("Nothing to welcome you with :(");
+                mCallback.onRetrievalFailed("Nothing Collector Info with :(");
             }
         });
     }
@@ -45,7 +45,7 @@ public class WtgInfoInteractorImpl extends AbstractInteractor implements WtgInfo
     public void run() {
 
         // retrieve the message
-        final String message = mMessageRepository.getWtgInfo();
+        final String message = mMessageRepository.getCollectorInfo();
 
         // check if we have failed to retrieve our message
         if (message == null || message.length() == 0) {

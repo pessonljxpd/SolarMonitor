@@ -34,7 +34,7 @@ public class AboutFragment extends BaseFragment {
 	RecyclerView mRecyclerView;
 
 	private MainActivitiy mActivity;
-	
+
 	private List<CardItemModel> cardItems = new ArrayList<CardItemModel>(10);
 
 	@Override
@@ -57,7 +57,7 @@ public class AboutFragment extends BaseFragment {
 	protected int getContentViewLayoutID() {
 		return R.layout.fragment_about;
 	}
-	
+
 	private void setUpCollapsingToolbarLayout() {
 		mCollapsingToolbarLayout.setTitle("SolarMonitor");
 	}
@@ -79,7 +79,7 @@ public class AboutFragment extends BaseFragment {
 		String[] cardContents = getResources().getStringArray(R.array.card_contents);
 		final int length = cardTitles.length / 10;
 		for (int i = 0; i < length; i++) {
-			cardItemModel = new CardItemModel(cardTitles[i], cardContents[i]);
+			cardItemModel = new CardItemModel(i, cardTitles[i], cardContents[i]);
 			cardItems.add(cardItemModel);
 		}
 	}
@@ -94,7 +94,7 @@ public class AboutFragment extends BaseFragment {
 		}
 		return false;
 	}
-	
+
 	public void setUpToolbar() {
 		mActivity.setSupportActionBar(mToolbar);
 		mActivity.getSupportActionBar().setTitle("");
@@ -103,29 +103,29 @@ public class AboutFragment extends BaseFragment {
 	public void setUpNavigationDrawer() {
 		mActivity.setupNavigationDrawer(mToolbar);
 	}
-	
+
 	@Override
 	protected void onFirstUserVisible() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	protected void onUserVisible() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	protected void onUserInvisible() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	protected void onEventComming(EventCenter eventCenter) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override

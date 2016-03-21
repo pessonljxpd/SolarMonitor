@@ -38,8 +38,8 @@ public class AboutRecyclerAdapter extends RecyclerView.Adapter<AboutRecyclerAdap
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.title.setText(cardItems.get(position).title);
-        holder.content.setText(cardItems.get(position).content);
+        holder.title.setText(cardItems.get(position).getTitle());
+        holder.content.setText(cardItems.get(position).getContent());
     }
 
     @Override

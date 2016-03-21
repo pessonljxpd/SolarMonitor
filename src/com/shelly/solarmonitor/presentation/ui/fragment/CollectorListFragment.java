@@ -13,14 +13,15 @@ import butterknife.InjectView;
 
 import com.shelly.library.eventbus.EventCenter;
 import com.shelly.solarmonitor.domin.model.CardItemModel;
+import com.shelly.solarmonitor.presentation.presenter.MainPresenter;
 import com.shelly.solarmonitor.presentation.ui.activity.MainActivitiy;
-import com.shelly.solarmonitor.presentation.ui.activity.WindFarmActivity;
+import com.shelly.solarmonitor.presentation.ui.activity.HomeActivity;
 import com.shelly.solarmonitor.presentation.ui.activity.base.BaseFragment;
 import com.shelly.solarmonitor.presentation.ui.adapter.CollectorRecyclerAdapter;
 import com.shelly.solarmonitor.presentation.ui.adapter.CollectorRecyclerAdapter.OnRecyclerViewListener;
 import com.ty.solarmonitor.R;
 
-public class CollectorListFragment extends BaseFragment {
+public class CollectorListFragment extends BaseFragment implements MainPresenter.View {
 
 	@InjectView(R.id.tab_toolbar)
 	Toolbar mToolbar;
@@ -30,7 +31,7 @@ public class CollectorListFragment extends BaseFragment {
 	CoordinatorLayout mCL;
 	@InjectView(R.id.recycler_view)
 	RecyclerView mRecyclerView;
-	
+
 	private MainActivitiy mActivity;
 
 	private List<CardItemModel> cardItems = new ArrayList<CardItemModel>(10);
@@ -52,7 +53,7 @@ public class CollectorListFragment extends BaseFragment {
 			@Override
 			public void onItemClick(int position) {
 				showToast(position + 1 + "is onClick");
-				readyGo(WindFarmActivity.class);
+				readyGo(HomeActivity.class);
 			}
 		});
 	}
@@ -63,7 +64,7 @@ public class CollectorListFragment extends BaseFragment {
 		String[] cardContents = getResources().getStringArray(R.array.card_contents);
 		final int length = cardTitles.length;
 		for (int i = 0; i < length; i++) {
-			cardItemModel = new CardItemModel(cardTitles[i], cardContents[i]);
+			cardItemModel = new CardItemModel(i, cardTitles[i], cardContents[i]);
 			cardItems.add(cardItemModel);
 		}
 	}
@@ -84,7 +85,7 @@ public class CollectorListFragment extends BaseFragment {
 
 	@Override
 	protected void initViewsAndEvents() {
-		this.mActivity = (MainActivitiy) getActivity(); 
+		this.mActivity = (MainActivitiy) getActivity();
 		setUpToolbar();
 		setUpRecyclerView();
 		setUpNavigationDrawer();
@@ -94,29 +95,29 @@ public class CollectorListFragment extends BaseFragment {
 	protected int getContentViewLayoutID() {
 		return R.layout.fragment_collector_list;
 	}
-	
+
 	@Override
 	protected void onFirstUserVisible() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	protected void onUserVisible() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	protected void onUserInvisible() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	protected void onEventComming(EventCenter eventCenter) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -124,5 +125,10 @@ public class CollectorListFragment extends BaseFragment {
 		return false;
 	}
 
+	@Override
+	public void displayCollectorInfo(String msg) {
+		// TODO Auto-generated method stub
+
+	}
 
 }

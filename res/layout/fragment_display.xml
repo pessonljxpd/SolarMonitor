@@ -2,32 +2,32 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/tab_coordinator_layout"
+    android:id="@+id/display_coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
     <com.shelly.library.widgets.XViewPager
-        android:id="@+id/tab_view_pager"
+        android:id="@+id/display_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/tab_appbar_layout"
+        android:id="@+id/display_appbar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >
 
-        <android.support.v7.widget.Toolbar
+        <!-- <android.support.v7.widget.Toolbar
             android:id="@+id/tab_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:layout_scrollFlags="scroll|enterAlways"
-            android:background="@color/primary" />
+            android:background="@color/primary" /> -->
 
         <com.shelly.library.smartlayout.SmartTabLayout
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/tab_smart"
+            android:id="@+id/display_tab_smart"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/primary"

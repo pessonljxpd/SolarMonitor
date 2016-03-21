@@ -2,7 +2,7 @@ package com.shelly.solarmonitor.presentation.ui.activity.base;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import butterknife.ButterKnife;
+import butterknife.InjectView;
 
 import com.shelly.library.R;
 import com.shelly.library.base.BaseAppCompatActivity;
@@ -10,7 +10,7 @@ import com.shelly.solarmonitor.SolarMonitorApplication;
 import com.shelly.solarmonitor.presentation.ui.BaseView;
 
 public abstract class BaseActivity extends BaseAppCompatActivity implements BaseView {
-
+	@InjectView(R.id.common_toolbar)
     protected Toolbar mToolbar;
 
     @Override
@@ -24,11 +24,10 @@ public abstract class BaseActivity extends BaseAppCompatActivity implements Base
     @Override
     public void setContentView(int layoutResID) {
         super.setContentView(layoutResID);
-        mToolbar = ButterKnife.findById(this, R.id.common_toolbar);
         if (null != mToolbar) {
             setSupportActionBar(mToolbar);
-            getSupportActionBar().setHomeButtonEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
         }
     }
 

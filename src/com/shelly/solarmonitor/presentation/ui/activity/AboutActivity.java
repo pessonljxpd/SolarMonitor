@@ -24,8 +24,6 @@ import com.shelly.solarmonitor.presentation.ui.adapter.AboutRecyclerAdapter;
 import com.ty.solarmonitor.R;
 
 public class AboutActivity extends BaseSwipeBackActivity {
-	@InjectView(R.id.toolbar)
-	Toolbar mToolbar;
 	@InjectView(R.id.collapsing_toolbar)
 	CollapsingToolbarLayout mCollapsingToolbarLayout;
 	@InjectView(R.id.fab_feedback)
@@ -34,27 +32,18 @@ public class AboutActivity extends BaseSwipeBackActivity {
 	CoordinatorLayout mCL;
 	@InjectView(R.id.recycler_view)
 	RecyclerView mRecyclerView;
-	
-    private List<CardItemModel> cardItems = new ArrayList<CardItemModel>(10);
 
+	private List<CardItemModel> cardItems = new ArrayList<CardItemModel>(10);
 
-//	setSupportActionBar(mToolbar);
-//	getSupportActionBar().setTitle("");
-//	getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//	getSupportActionBar().setDisplayShowHomeEnabled(true);
-//	getSupportActionBar().setHomeButtonEnabled(true);
-	
 	@Override
 	protected void getBundleExtras(Bundle extras) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	protected int getContentViewLayoutID() {
 		return R.layout.about;
 	}
-
 
 	@Override
 	protected View getLoadingTargetView() {
@@ -76,20 +65,20 @@ public class AboutActivity extends BaseSwipeBackActivity {
 	private void setUpRecyclerView() {
 		mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 		mRecyclerView.setHasFixedSize(true);
-        initializeCardItemList();
-        mRecyclerView.setAdapter(new AboutRecyclerAdapter(cardItems));
+		initializeCardItemList();
+		mRecyclerView.setAdapter(new AboutRecyclerAdapter(cardItems));
 	}
 
-	 private void initializeCardItemList(){
-        CardItemModel cardItemModel;
-        String[] cardTitles = getResources().getStringArray(R.array.card_titles);
-        String[] cardContents = getResources().getStringArray(R.array.card_contents);
-        final int length = cardTitles.length/3;
-        for(int i=0;i<length;i++){
-            cardItemModel = new CardItemModel(cardTitles[i],cardContents[i]);
-            cardItems.add(cardItemModel);
-        }
-    }
+	private void initializeCardItemList() {
+		CardItemModel cardItemModel;
+		String[] cardTitles = getResources().getStringArray(R.array.card_titles);
+		String[] cardContents = getResources().getStringArray(R.array.card_contents);
+		final int length = cardTitles.length / 3;
+		for (int i = 0; i < length; i++) {
+			cardItemModel = new CardItemModel(i, cardTitles[i], cardContents[i]);
+			cardItems.add(cardItemModel);
+		}
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -119,24 +108,24 @@ public class AboutActivity extends BaseSwipeBackActivity {
 	@Override
 	protected void onEventComming(EventCenter eventCenter) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	protected void onNetworkConnected(NetType type) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	protected void onNetworkDisConnected() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	protected boolean isApplyStatusBarTranslucency() {
-		return true;
+		return false;
 	}
 
 	@Override

@@ -2,14 +2,14 @@ package com.shelly.solarmonitor.storage;
 
 import android.content.Context;
 
-import com.shelly.solarmonitor.domin.repository.WtgInfoRepository;
+import com.shelly.solarmonitor.domin.repository.DisplayInfoRepository;
 import com.ty.solarmonitor.R;
 
-public class WtgInfoRepositoryImpl implements WtgInfoRepository {
+public class DisplayInfoRepositoryImpl implements DisplayInfoRepository {
 
 	private Context mContext;
 
-	public WtgInfoRepositoryImpl(Context context) {
+	public DisplayInfoRepositoryImpl(Context context) {
 		this.mContext = context;
 	}
 
